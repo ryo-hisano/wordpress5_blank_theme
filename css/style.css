@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+/* ======================================
+リセット
+====================================== */
+
+/* Box sizingの定義 */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* デフォルトのpaddingを削除 */
+ul[class],
+ol[class] {
+	padding: 0;
+}
+
+/* デフォルトのmarginを削除 */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* bodyのデフォルトを定義 */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* class属性を持つul、ol要素のリストスタイルを削除 */
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+/* classを持たない要素はデフォルトのスタイルを取得 */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* img要素の扱いを簡単にする */
+img {
+	display: block;
+	max-width: 100%;
+}
+
+/* article要素内の要素に自然な流れとリズムを定義 */
+article > * + * {
+	margin-top: 1em;
+}
+
+/* inputやbuttonなどのフォントは継承を定義 */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* 見たくない人用に、すべてのアニメーションとトランジションを削除 */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* ======================================
+共通CSS
+====================================== */
