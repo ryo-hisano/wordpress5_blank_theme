@@ -171,8 +171,8 @@ function add_files() {
 	// サイト共通のCSS読み込み（末尾がリビジョン番号）
 	wp_enqueue_style('style', get_template_directory_uri().'/css/style.css', '', '200420');
 
-	// ページ独自のCSS読み込み
-	wp_enqueue_style($slug, get_template_directory_uri().'/css/'.$slug.'.css', '', $ver);
+	// ページ独自のCSS読み込み（commonやaboutは予約語として使われているため$slugのままだと管理画面用CSSが読み込まれてしまう）
+	wp_enqueue_style('style_'.$slug, get_template_directory_uri().'/css/'.$slug.'.css', '', $ver);
 }
 
 add_action('wp_enqueue_scripts', 'add_files');
